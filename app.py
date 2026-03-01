@@ -42,14 +42,15 @@ def get_pr_diff(repo_full_name, pr_number):
     return None
 
 def post_pr_comment(repo_full_name, pr_number, comment_body):
-    """Posts the AI's architectural review back to GitHub."""
+    """Posts the architectural review back to GitHub."""
     url = f"https://api.github.com/repos/{repo_full_name}/issues/{pr_number}/comments"
     headers = {
         "Authorization": f"token {GITHUB_TOKEN}",
         "Accept": "application/vnd.github.v3+json"
     }
-    data = {"body": comment_body}
-    requests.post(url, headers=headers, json=data)
+    response = requests.post(url, headers=headers, json={"body": comment_body})
+    print(f"👉 GITHUB API STATUS: {response.status_code}") # Yeh error batayega
+    print(f"👉 GITHUB API RESPONSE: {response.text}") # Yeh exact reason batayega
 
 def analyze_code_with_gemini(diff_text):
     """Sends the diff to Gemini to check for algorithmic inefficiencies."""
@@ -107,6 +108,7 @@ def github_webhook():
                 
             # 4. Analyze with Agent
             analysis = analyze_code_with_gemini(diff)
+            print(f"👉 GEMINI ANALYSIS RESULT: {analysis}")
             
             # 5. Take Action if inefficient
             if analysis.get("has_inefficiency"):
