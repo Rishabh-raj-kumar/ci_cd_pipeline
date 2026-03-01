@@ -37,5 +37,5 @@ When a developer opens a PR, the system analyzes the Git diff and suggests optim
 ### Installation
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/yourusername/agentic-cicd-reviewer.git](https://github.com/yourusername/agentic-cicd-reviewer.git)
-   cd agentic-cicd-reviewer
+   git clone [https://github.com/Rishabh-raj-kumar/ci_cd_pipeline.git](https://github.com/Rishabh-raj-kumar/ci_cd_pipeline.git)
+   cd ci_cd_pipeline
