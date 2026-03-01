@@ -23,6 +23,9 @@ When a developer opens a PR, the system analyzes the Git diff and suggests optim
 * **Cryptographic Security:** Payload verification using SHA-256 HMAC signatures.
 * **Custom Telemetry:** Tracks agent execution latency and calculates real-world computational savings.
 
+  <img width="1129" height="820" alt="Screenshot 2026-03-01 134116" src="https://github.com/user-attachments/assets/8baef79f-d0ac-43ad-8f77-62598df28558" />
+
+
 ## 🚀 Getting Started
 
 ### Prerequisites
